@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+<!-- this bring in the block and other function into this template - kind of like importing modules but for html -->
+<!-- extends and grabs the base html file we made inside our main template directory -->
+<!-- need to render this unique html inside our block inside our base.html file  -->
+{% block content %} 
+  <!-- beasceue we have a namespace inside our our main url.py file we have to put the namespace name first and then the name="" name that we specify inside our leads/url.py file -->
+  <!-- is saying go inside the leads namespace and then from there go to the route we created  -->
+  <!-- url '' is a dynamic syntax for creating the links -->
+  <a href="{% url 'leads:lead-list' %}">Go Back to Leads</a>
+  <hr />
+  <h1>Are you sure you want to delete this lead?</h1>
+  <!-- will display on the page all the fields that we created inside our forms.py LeadForm class -->
+  <!-- .as_p redners the format in a paragraph format instead of lined up next to eachother -->
+  <!-- if you inspect the page you can see that you have 3 paragraph (<p>) tags created -->
+  <!-- action="." means you want it to post to the curretn path you're on -->
+  <!-- or I can send it to another URL if I need action="leads/another_url/" -->
+   <!-- for django whenever we're specifying the method as POST we need to include a csrf token -->
+  <form method="post">
+    <!-- csrf middleware token type="hidden" if you inspect page  -->
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Delete</button>
+  </form>
+{% endblock %}

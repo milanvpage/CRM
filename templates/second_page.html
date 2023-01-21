@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Second page</title>
+  <p>Second Page</p>
+  <!-- like in Javascript when we're passing data from views/models to html page -->
+  <!-- like ${} in javascript but different -->
+  <!-- {{ name }}
+  {{ age }} -->
+  <!-- {{ leads }} output entire list -->
+  <ul>
+    <!-- accessing context we're passing to our views from our models and then accessing them inside the templates -->
+    <!-- python Loop  -- looping through our leads-->
+    {% for lead in leads %}
+    <li>{{ lead }}</li>
+    {% endfor %}
+  </ul>
+</head>
+<body>
+  
+</body>
+</html>
