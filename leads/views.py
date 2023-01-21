@@ -77,6 +77,7 @@ class LeaCreateView(LoginRequiredMixin, generic.CreateView):
             recipient_list=["test2@test.com"]
         )
         return super(LeaCreateView, self).form_valid(form)
+        
 class LeaUpdateView(LoginRequiredMixin, generic.UpdateView):
     template_name = "leads/lead_update.html"
     # DJANGOS way of using the views template to create a form by using the form_class function to call it
